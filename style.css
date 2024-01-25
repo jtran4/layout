@@ -1,79 +1,63 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <link rel="stylesheet" href="style.css">
-<title>CSS Template</title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
+* {
+  box-sizing: border-box;
+  background-color: lightpink;
+}
 
-</style>
-</head>
-<body>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
 
-<h2>Life of Jennifer</h2>
-<p>Just a blog for a web development class</p>
-<p>Browze througha dn enjoy the quick read!</p>
+/* Style the header */
+header {
+  background-color: lightblue;
+  padding: 30px;
+  text-align: center;
+  font-size: 35px;
+  color: white;
+}
 
-<header>
-  <h2>Intro</h2>
-</header>
+/* Create two columns/boxes that floats next to each other */
+nav {
+  float: left;
+  width: 30%;
+  height: 300px; /* only for demonstration, should be removed */
+  background: lightcoral;
+  padding: 20px;
+}
 
-<section>
-  <nav>
-    <ul>
-      <li><a href="#">Intro</a></li>
-      <li><a href="#">Modules</a></li>
-      <li><a href="#">Blog</a></li>
-    </ul>
-  </nav>
-  
-  <div class="header">
-    <h2>Blog Name</h2>
-  </div>
-  
-  <div class="row">
-    <div class="leftcolumn">
-      <div class="card">
-        <h2>TITLE HEADING</h2>
-        <h5>Title description, Dec 7, 2017</h5>
-        <div class="fakeimg" style="height:200px;">Image</div>
-        <p>Some text..</p>
-      </div>
-      <div class="card">
-        <h2>TITLE HEADING</h2>
-        <h5>Title description, Sep 2, 2017</h5>
-        <div class="fakeimg" style="height:200px;">Image</div>
-        <p>Some text..</p>
-      </div>
-    </div>
-    <div class="rightcolumn">
-      <div class="card">
-        <h2>About Me</h2>
-        <div class="fakeimg" style="height:100px;">Image</div>
-        <p>Some text about me in culpa qui officia deserunt mollit anim..</p>
-      </div>
-      <div class="card">
-        <h3>Popular Post</h3>
-        <div class="fakeimg">Image</div><br>
-        <div class="fakeimg">Image</div><br>
-        <div class="fakeimg">Image</div>
-      </div>
-      <div class="card">
-        <h3>Follow Me</h3>
-        <p>Some text..</p>
-      </div>
-    </div>
-  </div>
-  
-  <div class="footer">
-    <h2>Footer</h2>
-  </div>
-</section>
+/* Style the list inside the menu */
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
 
-<footer>
-  <p>Footer</p>
-</footer>
+article {
+  float: left;
+  padding: 20px;
+  width: 70%;
+  background-color: lightpink;
+  height: 300px; /* only for demonstration, should be removed */
+}
 
-</body>
-</html>
+/* Clear floats after the columns */
+section::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Style the footer */
+footer {
+  background-color: lightseagreen;
+  padding: 10px;
+  text-align: center;
+  color: white;
+}
+
+/* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
+@media (max-width: 600px) {
+  nav, article {
+    width: 100%;
+    height: auto;
+  }
+}
